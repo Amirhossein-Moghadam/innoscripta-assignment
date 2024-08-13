@@ -13,7 +13,7 @@ export const newYorkTimesNewsConverter = (news: NewYorkTimesNews): News => {
   } = news;
   return {
     title,
-    imageUrl: multimedia?.[1]?.url ?? null,
+    imageUrl: multimedia?.[1]?.url ?? "/new-york-times.svg",
     content: abstract,
     publishedAt: published_date,
     url,

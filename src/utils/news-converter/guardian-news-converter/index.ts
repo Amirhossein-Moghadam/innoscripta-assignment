@@ -7,7 +7,7 @@ export const guardianNewsConverter = (news: Guardian): News => {
     author: null,
     category: sectionName,
     content: null,
-    imageUrl: null,
+    imageUrl: "/the-guardian.svg",
     publishedAt: webPublicationDate,
     publisher: "The Guardian",
     title: webTitle,
