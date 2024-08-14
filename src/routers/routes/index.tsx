@@ -1,14 +1,14 @@
 import { lazy } from "react";
 import { RouteObject } from "react-router";
 
-const Layout = lazy(() => import("components/Layout"));
-const Landing = lazy(() => import("pages/landing"));
+const MainLayout = lazy(() => import("components/templates/main-layout"));
+const NewsFeed = lazy(() => import("pages/news-feed"));
 
 const routes: RouteObject[] = [
   {
     path: "/",
-    element: <Layout />,
-    children: [{ path: "/", element: <Landing /> }],
+    element: <MainLayout />,
+    children: [{ path: "/", element: <NewsFeed /> }],
   },
 ];
 

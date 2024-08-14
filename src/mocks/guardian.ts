@@ -1,6 +1,6 @@
-import { Guardian } from "common/types/news-guardian.type";
+import { GuardianNews } from "common/types/news-guardian.type";
 
-export const GuardianData: Guardian[] = [
+export const GuardianData: GuardianNews[] = [
   {
     id: "sport/live/2024/aug/10/paris-2024-olympics-day-15-live-updates-today-schedule-events-athletics-marathon-basketball-golf",
     type: "liveblog",

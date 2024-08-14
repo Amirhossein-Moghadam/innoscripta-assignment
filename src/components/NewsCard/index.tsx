@@ -24,13 +24,14 @@ const NewsCard: FC<NewsCardProps> = ({ news }) => {
     publisher,
   } = news;
 
+  const onNewsCardClick = () => {
+    window.open(url, "_blank", "noopener,noreferrer");
+  };
+
   return (
     <Card
-      sx={{
-        minHeight: "200px",
-        height: "100%",
-        padding: 0,
-      }}
+      className="!shadow p-0 h-full min-h-[200px]"
+      onClick={onNewsCardClick}
     >
       <CardActionArea className="h-full">
         <CardContent
@@ -44,9 +45,10 @@ const NewsCard: FC<NewsCardProps> = ({ news }) => {
         >
           <Box className="h-full flex flex-col">
             <Box className="flex items-center mb-1">
+              <Box className="w-[8px] h-[8px] bg-success rounded-full" />
               <Typography
                 variant="body1"
-                sx={{ fontWeight: 500, fontSize: 12 }}
+                sx={{ fontWeight: 500, fontSize: 12, ml: 0.5 }}
               >
                 {publisher}
               </Typography>

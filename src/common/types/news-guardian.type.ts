@@ -1,4 +1,4 @@
-export type Guardian = {
+export type GuardianNews = {
   id: string;
   type: string;
   sectionId: string;
