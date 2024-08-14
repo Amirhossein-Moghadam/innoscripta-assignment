@@ -1,0 +1,26 @@
+.MuiInputBase-root {
+    height: 40px;
+}
+
+/* .MuiInputLabel-root {
+    line-height: 1 !important;
+  } */
+
+.MuiInputLabel-outlined {
+    font-size: 14px !important;
+    transform: translate(12px, 9px) scale(1) !important;
+    -webkit-transform: translate(12px, 9px) scale(1) !important;
+    -moz-transform: translate(12px, 9px) scale(1) !important;
+    -ms-transform: translate(12px, 9px) scale(1) !important;
+    -o-transform: translate(12px, 9px) scale(1) !important;
+}
+
+.MuiInputLabel-outlined.MuiInputLabel-shrink {
+    margin: 0 14px;
+    transform: translate(0, -6px) !important;
+    font-size: 12px !important;
+    -webkit-transform: translate(0, -6px) !important;
+    -moz-transform: translate(0, -6px) !important;
+    -ms-transform: translate(0, -6px) !important;
+    -o-transform: translate(0, -6px) !important;
+}
