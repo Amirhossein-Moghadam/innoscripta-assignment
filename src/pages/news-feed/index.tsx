@@ -7,6 +7,7 @@ import NewsCategoryToggleButton, {
   NewsCategoryToggleButtonProps,
 } from "components/organisms/news-category-toggle-buttons";
 import { ToggleItem } from "components/atoms/toggle-buttons";
+import NewsFromToDatePicker from "components/organisms/news-from-to-date-picker";
 
 const NewsFeed = () => {
   //* States
@@ -30,19 +31,28 @@ const NewsFeed = () => {
   };
 
   return (
-    <Box>
-      <NewsCategoryToggleButton
-        onChange={onChangeNewsCategory}
-        selected={selectedNewsCategory}
-      />
-      <Grid container spacing={2}>
-        {news.map((item, index) => (
-          <Grid item sm={12} md={6} key={index}>
-            <NewsCard news={item} />
-          </Grid>
-        ))}
+    <Grid container rowSpacing={2}>
+      <Grid item sm={12} md={6}>
+        <NewsFromToDatePicker />
       </Grid>
-    </Box>
+
+      <Grid item sm={12} md={6}>
+        <NewsCategoryToggleButton
+          onChange={onChangeNewsCategory}
+          selected={selectedNewsCategory}
+        />
+      </Grid>
+
+      <Grid item>
+        <Grid container spacing={2}>
+          {news.map((item, index) => (
+            <Grid item sm={12} md={6} key={index}>
+              <NewsCard news={item} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 
