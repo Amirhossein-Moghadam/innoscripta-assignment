@@ -1,12 +1,21 @@
 import { FC } from "react";
 import InnoscriptaToggleButtons, {
   InnoscriptaToggleButtonsProps,
+  ToggleItem,
 } from "components/atoms/toggle-buttons";
+import Grid from "@mui/material/Grid";
+import { NewsCategory } from "common/types/news-category.type";
 
 export type NewsCategoryToggleButtonProps = {
-  onChange: Pick<InnoscriptaToggleButtonsProps, "onChange">["onChange"];
+  onChange: Pick<
+    InnoscriptaToggleButtonsProps<ToggleItem & NewsCategory>,
+    "onChange"
+  >["onChange"];
   selected:
-    | Pick<InnoscriptaToggleButtonsProps, "selected">["selected"]
+    | Pick<
+        InnoscriptaToggleButtonsProps<ToggleItem & NewsCategory>,
+        "selected"
+      >["selected"]
     | undefined;
 };
 
@@ -14,46 +23,70 @@ const NewsCategoryToggleButton: FC<NewsCategoryToggleButtonProps> = ({
   onChange,
   selected,
 }) => {
-  const toggleItems = [
+  const toggleItems: (NewsCategory & ToggleItem)[] = [
     {
-      label: "Sport",
-      value: "sport",
+      label: "Health",
+      value: "health",
+      supported: {
+        NYT: "health",
+        Guardian: "health",
+        NewsAPI: "health",
+      },
     },
     {
-      label: "Science",
-      value: "science",
-    },
-    {
-      label: "Politics",
-      value: "politics",
-    },
-    {
-      label: "Technology",
-      value: "technology",
-    },
-    {
-      label: "Sport",
-      value: "sport",
-    },
-    {
-      label: "Science",
-      value: "science",
-    },
-    {
-      label: "Politics",
-      value: "politics",
+      label: "Business",
+      value: "business",
+      supported: {
+        NYT: "business",
+        Guardian: "business",
+        NewsAPI: "business",
+      },
     },
     {
       label: "Technology",
       value: "technology",
+      supported: {
+        NYT: "technology",
+        Guardian: "technology",
+        NewsAPI: "technology",
+      },
+    },
+    {
+      label: "Sports",
+      value: "sports",
+      supported: {
+        NYT: "sports",
+        Guardian: "sport",
+        NewsAPI: "sports",
+      },
+    },
+    {
+      label: "Science",
+      value: "science",
+      supported: {
+        NYT: "science",
+        Guardian: "science",
+        NewsAPI: "science",
+      },
+    },
+    {
+      label: "Politics",
+      value: "politics",
+      supported: {
+        NYT: "politics",
+        Guardian: "politics",
+        NewsAPI: "politics",
+      },
     },
   ];
   return (
-    <InnoscriptaToggleButtons
-      toggleItems={toggleItems}
-      onChange={onChange}
-      selected={selected}
-    />
+    <Grid container className="h-full flex items-center">
+      <InnoscriptaToggleButtons
+        toggleItems={toggleItems}
+        onChange={onChange}
+        selected={selected}
+      />
+    </Grid>
   );
 };
 

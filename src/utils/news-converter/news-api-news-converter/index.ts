@@ -7,7 +7,7 @@ export const newsAPINewsConverter = (news: NewsAPINews): News => {
     author,
     category: null,
     content,
-    imageUrl: urlToImage,
+    imageUrl: urlToImage ?? "/news-api.png",
     publishedAt,
     publisher: source.name,
     title,

@@ -3,22 +3,26 @@ import { News } from "common/types/news.type";
 
 export const newYorkTimesNewsConverter = (news: NewYorkTimesNews): News => {
   const {
-    title,
-    multimedia,
-    url,
     abstract,
-    published_date,
-    subsection,
+    multimedia,
+    web_url,
+    lead_paragraph,
+    pub_date,
+    section_name,
     byline,
+    source,
+    headline,
   } = news;
   return {
-    title,
-    imageUrl: multimedia?.[1]?.url ?? "/new-york-times.svg",
-    content: abstract,
-    publishedAt: published_date,
-    url,
-    publisher: "New York Times",
-    category: subsection,
-    author: byline,
+    title: headline.main,
+    imageUrl: multimedia?.[0]?.url
+      ? `https://www.nytimes.com/${multimedia?.[0].url}`
+      : "/new-york-times.svg",
+    content: lead_paragraph,
+    publishedAt: pub_date,
+    url: web_url,
+    publisher: source,
+    category: section_name,
+    author: byline.original,
   };
 };

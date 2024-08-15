@@ -1,6 +1,4 @@
 import { FC } from "react";
-import CheckIcon from "@mui/icons-material/Check";
-import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import { Grid } from "@mui/material";
 
@@ -9,27 +7,30 @@ export type ToggleItem = {
   label: string;
 };
 
-export type InnoscriptaToggleButtonsProps = {
-  toggleItems: ToggleItem[];
-  selected: ToggleItem | undefined;
-  onChange: (item: ToggleItem) => void;
+export type InnoscriptaToggleButtonsProps<T> = {
+  toggleItems: T[];
+  selected: T | undefined;
+  onChange: (item: T) => void;
 };
 
-const InnoscriptaToggleButtons: FC<InnoscriptaToggleButtonsProps> = (props) => {
+const InnoscriptaToggleButtons = <T,>(
+  props: InnoscriptaToggleButtonsProps<T>
+) => {
   const { selected, onChange, toggleItems } = props;
 
   return (
     <Grid container spacing={1}>
       {toggleItems.map((item) => (
-        <Grid item>
+        <Grid item key={(item as ToggleItem).value}>
           <Button
-            className="rounded-3xl text-[11px] py-1 py-0"
+            className={`rounded-3xl text-[12px] px-1 py-0 ${
+              (selected as ToggleItem)?.value === (item as ToggleItem).value &&
+              "font-bold border-2 border-warn text-warn"
+            }`}
             variant="outlined"
-            key={item.value}
-            startIcon={selected?.value === item.value && <CheckIcon />}
-            onClick={() => onChange(item)}
+            onClick={() => onChange(item as any)}
           >
-            {item.label}
+            {(item as ToggleItem).label}
           </Button>
         </Grid>
       ))}

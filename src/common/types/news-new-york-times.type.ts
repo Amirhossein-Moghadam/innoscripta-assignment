@@ -1,32 +1,55 @@
 export type NewYorkTimesNews = {
-  section: string;
-  subsection: string;
-  title: string;
   abstract: string;
-  url: string;
+  web_url: string;
   uri: string;
-  byline: string;
-  item_type: "Article" | "Interactive";
-  updated_date: string;
-  created_date: string;
-  published_date: string;
-  material_type_facet: string;
-  kicker: string;
-  des_facet: string[];
-  org_facet: string[];
-  per_facet: string[];
-  geo_facet: string[];
+  snippet: string;
+  lead_paragraph: string;
+  source: string;
+  byline: {
+    original: string;
+    person: {
+      firstname: string;
+      middlename: string | null;
+      lastname: string;
+      qualifier: string | null;
+      title: string | null;
+      role: string | null;
+      organization: string | null;
+      rank: number;
+    }[];
+    organization: string | null;
+  };
   multimedia:
     | null
     | {
+        credit: string | null;
+        rank: number;
         url: string;
-        format: string;
         height: number;
         width: number;
-        type: "image";
-        subtype: "photo";
-        caption: string;
-        copyright: string;
+        type: string;
+        subtype: string | null;
+        caption: string | null;
+        legacy: any;
+        subType: string;
+        crop_name: string;
       }[];
-  short_url: string;
+  pub_date: string;
+  document_type: string;
+  news_desk: string;
+  section_name: string;
+  subsection_name?: string;
+  type_of_material: string;
+  _id: string;
+  word_count: number;
+  headline: {
+    main: string;
+    kicker: string | null;
+    content_kicker: string | null;
+    print_headline: string | null;
+    name: string | null;
+    seo: string | null;
+    sub: string | null;
+  };
+  keywords?: any;
 };

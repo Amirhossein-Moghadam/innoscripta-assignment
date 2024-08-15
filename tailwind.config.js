@@ -15,6 +15,7 @@ module.exports = {
       },
       colors: {
         success: "#4BB543",
+        warn: "#ffa500",
       },
     },
   },

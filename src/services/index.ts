@@ -1,14 +1,13 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
-import { NewsSources } from "common/types/news-sources.type";
 
 type Args = {
   url: string;
-  method: "GET" | "POST" | "PUT" | "DELETE";
+  method?: "GET" | "POST" | "PUT" | "DELETE";
   params?: { [key in string | number]: string | number | undefined };
 };
 
 const services = async (args: Args) => {
-  const { url, params, method } = args;
+  const { url, params, method = "GET" } = args;
   const config: AxiosRequestConfig = {
     method,
     url,
