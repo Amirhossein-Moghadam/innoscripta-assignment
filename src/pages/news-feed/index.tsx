@@ -1,6 +1,6 @@
-import { MouseEvent, useEffect, useMemo, useState } from "react";
-import { Box, Grid } from "@mui/material";
-import NewsCard from "components/NewsCard";
+import { useEffect, useMemo, useState } from "react";
+import Grid from "@mui/material/Grid";
+import NewsCard from "components/molecules/news-card";
 import { newsAsync } from "./news-slice";
 import { useAppDispatch, useAppSelector } from "store";
 import NewsCategoryToggleButton, {
@@ -31,7 +31,7 @@ const NewsFeed = () => {
   };
 
   return (
-    <Grid container rowSpacing={2}>
+    <Grid container spacing={2}>
       <Grid item sm={12} md={6}>
         <NewsFromToDatePicker />
       </Grid>
@@ -43,15 +43,11 @@ const NewsFeed = () => {
         />
       </Grid>
 
-      <Grid item>
-        <Grid container spacing={2}>
-          {news.map((item, index) => (
-            <Grid item sm={12} md={6} key={index}>
-              <NewsCard news={item} />
-            </Grid>
-          ))}
+      {news.map((item, index) => (
+        <Grid item sm={12} md={6} key={index}>
+          <NewsCard news={item} />
         </Grid>
-      </Grid>
+      ))}
     </Grid>
   );
 };

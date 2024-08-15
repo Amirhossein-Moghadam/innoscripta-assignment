@@ -2,6 +2,7 @@ import { FC } from "react";
 import CheckIcon from "@mui/icons-material/Check";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import { Grid } from "@mui/material";
 
 export type ToggleItem = {
   value: string;
@@ -18,19 +19,21 @@ const InnoscriptaToggleButtons: FC<InnoscriptaToggleButtonsProps> = (props) => {
   const { selected, onChange, toggleItems } = props;
 
   return (
-    <Box className="flex">
+    <Grid container spacing={1}>
       {toggleItems.map((item) => (
-        <Button
-          className="!mx-2 !rounded-3xl !text-[11px] !px-2 !py-1"
-          variant="outlined"
-          key={item.value}
-          startIcon={selected?.value === item.value && <CheckIcon />}
-          onClick={() => onChange(item)}
-        >
-          {item.label}
-        </Button>
+        <Grid item>
+          <Button
+            className="rounded-3xl text-[11px] py-1 py-0"
+            variant="outlined"
+            key={item.value}
+            startIcon={selected?.value === item.value && <CheckIcon />}
+            onClick={() => onChange(item)}
+          >
+            {item.label}
+          </Button>
+        </Grid>
       ))}
-    </Box>
+    </Grid>
   );
 };
 

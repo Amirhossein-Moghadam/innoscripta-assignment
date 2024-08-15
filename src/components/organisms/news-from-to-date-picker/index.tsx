@@ -5,7 +5,7 @@ const NewsFromToDatePicker = () => {
   return (
     <Box className="flex items-center">
       <Box>
-        <InnoscriptaDatePicker label="From" className="ml-4" />
+        <InnoscriptaDatePicker label="From"/>
       </Box>
       <Box className="ml-4">
         <InnoscriptaDatePicker label="To" />

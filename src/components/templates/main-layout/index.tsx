@@ -6,8 +6,8 @@ const MainLayout = (props: any) => {
   return (
     <Box>
       <TopBar />
-      <Box className="py-8 px-4 bg-[#f7f7f7]">
-        <Box sx={{ maxWidth: "1280px", margin: "auto" }}>
+      <Box className="py-8 px-4">
+        <Box className="max-w-[1280px] m-auto">
           <Outlet />
         </Box>
       </Box>

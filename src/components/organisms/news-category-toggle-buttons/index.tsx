@@ -31,6 +31,22 @@ const NewsCategoryToggleButton: FC<NewsCategoryToggleButtonProps> = ({
       label: "Technology",
       value: "technology",
     },
+    {
+      label: "Sport",
+      value: "sport",
+    },
+    {
+      label: "Science",
+      value: "science",
+    },
+    {
+      label: "Politics",
+      value: "politics",
+    },
+    {
+      label: "Technology",
+      value: "technology",
+    },
   ];
   return (
     <InnoscriptaToggleButtons
