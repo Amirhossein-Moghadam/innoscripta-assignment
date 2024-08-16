@@ -5,4 +5,5 @@ export type GuardianSearchParams = {
   "to-date"?: string;
   "page-size"?: number;
   section?: string;
+  "tag"?: string;
 };

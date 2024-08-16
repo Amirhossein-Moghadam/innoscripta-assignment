@@ -75,9 +75,10 @@ export const newsAsync = createAsyncThunk<News[], NewsAsyncOptions>(
     if (source === "All" || source === "News API") {
       requests.push(
         services({
-          url: Boolean(params.keyword)
-            ? APIS_URL.NEWS_API_URL_EVERYTHING
-            : APIS_URL.NEWS_API_URL_HEAD_LINES,
+          url:
+            Boolean(params.keyword) || Boolean(params.author)
+              ? APIS_URL.NEWS_API_URL_EVERYTHING
+              : APIS_URL.NEWS_API_URL_HEAD_LINES,
           params: newsAPIParamsConverter(params),
         }).then(({ articles }) =>
           articles
@@ -95,7 +96,11 @@ export const newsAsync = createAsyncThunk<News[], NewsAsyncOptions>(
 const newsSlice = createSlice({
   name: "news",
   initialState,
-  reducers: {},
+  reducers: {
+    newsReset: (state) => {
+      state = initialState;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(newsAsync.pending, (state) => {
@@ -111,5 +116,7 @@ const newsSlice = createSlice({
       });
   },
 });
+
+export const { newsReset } = newsSlice.actions;
 
 export default newsSlice.reducer;

@@ -3,7 +3,6 @@ import { News } from "common/types/news.type";
 
 export const newYorkTimesNewsConverter = (news: NewYorkTimesNews): News => {
   const {
-    abstract,
     multimedia,
     web_url,
     lead_paragraph,

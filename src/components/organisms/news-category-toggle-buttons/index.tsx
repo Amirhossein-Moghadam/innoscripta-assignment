@@ -29,17 +29,26 @@ const NewsCategoryToggleButton: FC<NewsCategoryToggleButtonProps> = ({
       value: "health",
       supported: {
         NYT: "health",
-        Guardian: "health",
+        Guardian: "wellness",
         NewsAPI: "health",
-      },
+      }
     },
     {
       label: "Business",
       value: "business",
       supported: {
-        NYT: "business",
+        NYT: "Business Day",
         Guardian: "business",
         NewsAPI: "business",
+      },
+    },
+    {
+      label: "Weather",
+      value: "Weather",
+      supported: {
+        NYT: "Weather",
+        Guardian: "Weather",
+        NewsAPI: "Weather",
       },
     },
     {
@@ -73,7 +82,7 @@ const NewsCategoryToggleButton: FC<NewsCategoryToggleButtonProps> = ({
       label: "Politics",
       value: "politics",
       supported: {
-        NYT: "politics",
+        NYT: "U.S.",
         Guardian: "politics",
         NewsAPI: "politics",
       },

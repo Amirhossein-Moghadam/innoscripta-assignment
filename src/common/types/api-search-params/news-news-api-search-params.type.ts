@@ -6,4 +6,5 @@ export type NewsAPISearchParams = {
   pageSize?: number;
   category?: string;
   language?: string;
+  author?: string;
 };

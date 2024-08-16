@@ -7,4 +7,5 @@ export type NewsSearchParams = {
   from: Dayjs | null;
   keyword: string | null;
   limit: number;
+  author: string | null;
 };
