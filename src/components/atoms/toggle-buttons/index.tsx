@@ -28,7 +28,7 @@ const InnoscriptaToggleButtons = <T,>(
               "font-bold border-2 border-warn text-warn"
             }`}
             variant="outlined"
-            onClick={() => onChange(item as any)}
+            onClick={() => onChange(item)}
           >
             {(item as ToggleItem).label}
           </Button>

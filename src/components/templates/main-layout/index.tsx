@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import TopBar from "components/organisms/top-bar";
 import { Outlet } from "react-router";
 
-const MainLayout = (props: any) => {
+const MainLayout = () => {
   return (
     <Box>
       <TopBar />
