@@ -1,4 +1,4 @@
-#### Hi, For running the project follow these steps
+#### Hi👋, For running the project follow these steps
 
 #### 1) `npm install`
 
@@ -14,3 +14,5 @@
 - Theming: `Tailwind`, `Emotion`
 - Routing: `React Router`
 - API Sources: `New York Times`, `The Guardian` and `News API`
+
+##### Best Regards ❤️
