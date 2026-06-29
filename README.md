@@ -14,5 +14,3 @@
 - Theming: `Tailwind`, `Emotion`
 - Routing: `React Router`
 - API Sources: `New York Times`, `The Guardian` and `News API`
-
-##### Best Regards ❤️
